@@ -17,7 +17,8 @@ public class BankTransactionService {
   public enum BankName {
     Degiro,
     Revolut,
-    Sanpaolo
+    Sanpaolo, 
+    Unicredit,
   }
 
   final
@@ -190,6 +191,7 @@ public class BankTransactionService {
         case Degiro -> bankTransactionDtos = degiroCsv(csvData);
         case Revolut -> bankTransactionDtos = revolutCsv(csvData);
         case Sanpaolo -> throw new RuntimeException("Sanpaolo not implemented yet");
+        case Unicredit -> throw new RuntimeException("Unicredit not implemented yet");
         default -> throw new RuntimeException("Impossible to be here");
       }
 
